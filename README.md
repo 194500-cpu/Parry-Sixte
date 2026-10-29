@@ -6,6 +6,8 @@ A small survival game I made in Godot where you have to survive waves of arrows 
 
 The concept is pretty simple: you're stuck in an arena, and arrows keep coming at you from different directions. You have to defend yourself and survive for 60 seconds to beat each stage.
 
+It is available online at https://194500-cpu.github.io/Parry-Sixte/
+
 ## Gameplay
 
 The game starts off relatively easy, but the longer you survive, the more difficult it gets. Arrows start spawning faster, and new types appear as you progress.
