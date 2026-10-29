@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brpp8dqpj0ccv"]
+
+[ext_resource type="Texture2D" uid="uid://cvg6ky86jxbyw" path="res://Images/centredknight.png" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://bxp47svgh0a0v" path="res://Scenes/sprite_2d.gd" id="3_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxrlw"]
+size = Vector2(14, 20)
+
+[node name="Player" type="CharacterBody2D" unique_id=1258261768 groups=["player"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2069437727]
+position = Vector2(0, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_v0iea")
+script = ExtResource("3_6t5aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2105524547 groups=["player"]]
+position = Vector2(2, 11)
+shape = SubResource("RectangleShape2D_qxrlw")

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dtmjt6hhovov"]
+
+[ext_resource type="PackedScene" uid="uid://brpp8dqpj0ccv" path="res://Scenes/player.tscn" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://cfnbv4rm2a10t" path="res://Scenes/game.gd" id="1_wowpa"]
+[ext_resource type="PackedScene" uid="uid://doxll1peav34d" path="res://Scenes/sword.tscn" id="2_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://dqywwih0iyg84" path="res://Scenes/gradient-frame-14356837757t8.jpg" id="2_wowpa"]
+[ext_resource type="PackedScene" uid="uid://r1a1u8tmy3ra" path="res://Scenes/texture_progress_bar.tscn" id="3_wrm1d"]
+[ext_resource type="Script" uid="uid://dpkmd1f7bmbyx" path="res://Scenes/canvas_layer.gd" id="6_i6g32"]
+
+[node name="Game" type="Node2D" unique_id=1426407075]
+script = ExtResource("1_wowpa")
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=850008110]
+position = Vector2(395, 396)
+scale = Vector2(0.41458338, 0.41458336)
+texture = ExtResource("2_wowpa")
+
+[node name="Player" parent="." unique_id=1258261768 instance=ExtResource("1_qxrlw")]
+position = Vector2(394, 401)
+
+[node name="Sword" parent="." unique_id=980979011 instance=ExtResource("2_qxrlw")]
+position = Vector2(396, 401)
+
+[node name="TextureProgressBar" parent="." unique_id=658050453 instance=ExtResource("3_wrm1d")]
+offset_left = 694.0
+offset_top = 314.0
+offset_right = 773.0
+offset_bottom = 483.0
+
+[node name="TimerLabel" type="Label" parent="." unique_id=412514214]
+offset_left = 348.0
+offset_top = 157.0
+offset_right = 426.0
+offset_bottom = 226.0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1589836538]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1346562157]
+script = ExtResource("6_i6g32")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1862055249]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

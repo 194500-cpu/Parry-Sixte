@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bm88ep03bykpa"]
+
+[ext_resource type="Texture2D" uid="uid://drvmakf8gr3f1" path="res://Images/victory.png" id="1_iu3ef"]
+[ext_resource type="Script" uid="uid://coymj4xggvdh1" path="res://Scenes/canvas_layer2.gd" id="2_37uo8"]
+[ext_resource type="Script" uid="uid://bny1nhpbwiii" path="res://Scenes/restart.gd" id="3_wp3vg"]
+
+[node name="finalwin" type="Control" unique_id=1765087650]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_wp3vg")
+
+[node name="victoryscreen" type="Sprite2D" parent="." unique_id=387223497]
+position = Vector2(428.00003, 396.99997)
+scale = Vector2(0.77562505, 0.75088817)
+texture = ExtResource("1_iu3ef")
+
+[node name="Restart" type="Button" parent="." unique_id=272267882]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 605.0
+offset_right = 507.0
+offset_bottom = 662.0
+theme_override_font_sizes/font_size = 30
+text = "Play again"
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1821059204]
+script = ExtResource("2_37uo8")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=619681659]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

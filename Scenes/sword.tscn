@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://doxll1peav34d"]
+
+[ext_resource type="Script" uid="uid://by4kgivcoxejs" path="res://Scenes/sword.gd" id="1_d6wag"]
+[ext_resource type="Texture2D" uid="uid://df18mg6x3rpq1" path="res://Images/sword-1.png.png" id="2_kb2vl"]
+[ext_resource type="AudioStream" uid="uid://kcmy7qkd7ter" path="res://Scenes/slash.mp3" id="3_d6wag"]
+
+[sub_resource type="Curve" id="Curve_d6wag"]
+_data = [Vector2(0, 0.17025095), 0.0, 3.9238086, 0, 0, Vector2(0.20926243, 0.63082445), 1.1776494, 1.1776494, 0, 0, Vector2(0.591623, 0.7890173), 0.0, 0.0, 0, 0, Vector2(0.89267015, 0.5751445), -2.1197693, -2.1197693, 0, 0, Vector2(1, 0.12903231), -8.423724, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4hwj"]
+size = Vector2(69.25, 41)
+
+[node name="Sword" type="Area2D" unique_id=599077820]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_d6wag")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1474704725]
+position = Vector2(1.0000305, -0.99998474)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("2_kb2vl")
+offset = Vector2(2000, 0)
+
+[node name="arc" type="Line2D" parent="." unique_id=586001930]
+points = PackedVector2Array(74, 0)
+width = 15.0
+width_curve = SubResource("Curve_d6wag")
+joint_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=864297547]
+position = Vector2(59.375, -0.5)
+shape = SubResource("RectangleShape2D_w4hwj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1849717421]
+stream = ExtResource("3_d6wag")

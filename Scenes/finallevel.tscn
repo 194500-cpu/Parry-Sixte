@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://c1vi7roxothn"]
+
+[ext_resource type="Script" uid="uid://sdna2kbaqiqb" path="res://Scenes/finallevel.gd" id="1_rx8qd"]
+[ext_resource type="PackedScene" uid="uid://brpp8dqpj0ccv" path="res://Scenes/player.tscn" id="1_u8rrg"]
+[ext_resource type="Texture2D" uid="uid://duwior6y3eiy1" path="res://Images/gradientlevel2.jpg" id="2_bynla"]
+[ext_resource type="PackedScene" uid="uid://doxll1peav34d" path="res://Scenes/sword.tscn" id="2_omnqn"]
+[ext_resource type="PackedScene" uid="uid://r1a1u8tmy3ra" path="res://Scenes/texture_progress_bar.tscn" id="3_rx8qd"]
+[ext_resource type="Script" uid="uid://dpkmd1f7bmbyx" path="res://Scenes/canvas_layer.gd" id="6_bynla"]
+
+[node name="finallevel" type="Node2D" unique_id=1842393138]
+script = ExtResource("1_rx8qd")
+
+[node name="Blue" type="Sprite2D" parent="." unique_id=1904543681]
+position = Vector2(393, 404.00003)
+scale = Vector2(0.13799998, 0.13783336)
+texture = ExtResource("2_bynla")
+
+[node name="Player" parent="." unique_id=1258261768 instance=ExtResource("1_u8rrg")]
+modulate = Color(0.6585334, 0.65388316, 0.68788105, 1)
+position = Vector2(394, 401)
+
+[node name="Sword" parent="." unique_id=599077820 instance=ExtResource("2_omnqn")]
+position = Vector2(396, 401)
+
+[node name="TextureProgressBar" parent="." unique_id=658050453 instance=ExtResource("3_rx8qd")]
+offset_left = 694.0
+offset_top = 314.0
+offset_right = 773.0
+offset_bottom = 483.0
+
+[node name="TimerLabel" type="Label" parent="." unique_id=487610561]
+offset_left = 339.0
+offset_top = 152.0
+offset_right = 445.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=797332051]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=345085080]
+script = ExtResource("6_bynla")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1988330733]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

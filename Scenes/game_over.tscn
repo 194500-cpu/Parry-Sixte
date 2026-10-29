@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c18k2c3r6bjoo"]
+
+[ext_resource type="Script" uid="uid://bosc0ropfo0rr" path="res://Scenes/game_over.gd" id="1_ojehl"]
+[ext_resource type="Texture2D" uid="uid://gaj4jkx6wgc0" path="res://Images/defeatscreen.png" id="2_8fo1c"]
+[ext_resource type="Script" uid="uid://coymj4xggvdh1" path="res://Scenes/canvas_layer2.gd" id="3_ek8ke"]
+
+[node name="game_over" type="Control" unique_id=167002102]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojehl")
+
+[node name="defeatscreen" type="Sprite2D" parent="." unique_id=708546545]
+position = Vector2(483.00003, 413.00003)
+scale = Vector2(0.8668659, 0.762764)
+texture = ExtResource("2_8fo1c")
+
+[node name="Button" type="Button" parent="." unique_id=541909276]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 608.0
+offset_right = 523.0
+offset_bottom = 663.0
+theme_override_font_sizes/font_size = 30
+text = "Keep fighting"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=709881824]
+script = ExtResource("3_ek8ke")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1648512605]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

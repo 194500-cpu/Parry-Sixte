@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://chpefm42o5nbt"]
+
+[ext_resource type="Script" uid="uid://b86s3v2g1r3oi" path="res://Scenes/stage_1_win.gd" id="1_to5cn"]
+[ext_resource type="Texture2D" uid="uid://dqt7a1eq12td6" path="res://Images/levelcomplete.png" id="2_jepnr"]
+[ext_resource type="Script" uid="uid://coymj4xggvdh1" path="res://Scenes/canvas_layer2.gd" id="3_aov5q"]
+
+[node name="Stage1Win" type="Control" unique_id=1425863673]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_to5cn")
+
+[node name="victoryscreen" type="Sprite2D" parent="." unique_id=1319661563]
+position = Vector2(442, 391)
+scale = Vector2(0.7460106, 0.74295765)
+texture = ExtResource("2_jepnr")
+
+[node name="Button" type="Button" parent="." unique_id=965266627]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 665.0
+offset_right = 523.0
+offset_bottom = 740.0
+theme_override_font_sizes/font_size = 33
+text = "Next Level"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=909721895]
+script = ExtResource("3_aov5q")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1941659085]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

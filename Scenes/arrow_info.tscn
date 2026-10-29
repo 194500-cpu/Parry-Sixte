@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bkr8dvgon51th"]
+
+[ext_resource type="Texture2D" uid="uid://bmyt2hcamxyc8" path="res://Images/arrowinfo.png" id="1_3v1hv"]
+[ext_resource type="Script" uid="uid://hnxt7ah6ku6n" path="res://Scenes/goback.gd" id="2_onhr3"]
+[ext_resource type="Script" uid="uid://coymj4xggvdh1" path="res://Scenes/canvas_layer2.gd" id="3_onhr3"]
+
+[node name="arrow info" type="Control" unique_id=1475537754]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="coverup" type="Sprite2D" parent="." unique_id=251690411]
+position = Vector2(455.00003, 519)
+scale = Vector2(0.723192, 0.5206481)
+texture = ExtResource("1_3v1hv")
+
+[node name="Arrowinfo" type="Sprite2D" parent="." unique_id=1669420549]
+position = Vector2(450.99997, 349.74997)
+scale = Vector2(0.72693264, 0.7215595)
+texture = ExtResource("1_3v1hv")
+
+[node name="goback" type="Button" parent="." unique_id=1984156742]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 646.0
+offset_right = 512.0
+offset_bottom = 697.0
+theme_override_font_sizes/font_size = 30
+text = "Back"
+script = ExtResource("2_onhr3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=135718848]
+script = ExtResource("3_onhr3")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=297400090]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="goback" to="goback" method="_on_pressed"]
