@@ -9,15 +9,9 @@ html, body, #canvas {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	width: 100%;
-	height: 100%
 }
 
 body {
-	display: flex;
-	justify-content: center;
-    align-items: center;
-    background-color: #111;
 	color: white;
 	background-color: black;
 	overflow: hidden;
@@ -26,7 +20,6 @@ body {
 
 #canvas {
 	display: block;
-    margin: auto;
 }
 
 #canvas:focus {
@@ -97,9 +90,36 @@ body {
 	z-index: 1;
 }
 		</style>
-		<link id="-gd-engine-icon" rel="icon" type="image/png" href="Parry Sixte.icon.png" />
-<link rel="apple-touch-icon" href="Parry Sixte.apple-touch-icon.png"/>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+<style>
+/* Keep Godot's square project viewport, but scale the displayed canvas. */
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #242424;
+}
+
+/* Godot sets inline CSS dimensions; override only their display size. */
+#canvas {
+    display: block;
+    width: min(100vw, 100vh) !important;
+    height: min(100vw, 100vh) !important;
+    width: min(100vw, 100dvh) !important;
+    height: min(100vw, 100dvh) !important;
+    flex: none;
+}
+</style>
 	</head>
 	<body>
 		<canvas id="canvas">
@@ -111,14 +131,14 @@ body {
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="Parry Sixte.png" alt="">
+			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="index.png" alt="">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
 
-		<script src="Parry Sixte.js"></script>
+		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"Parry Sixte","experimentalVK":false,"fileSizes":{"Parry Sixte.pck":12057640,"Parry Sixte.wasm":37900721},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":12081288,"index.wasm":37900721},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
