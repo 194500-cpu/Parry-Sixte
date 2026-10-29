@@ -1,6 +1,6 @@
 # Parry Sixte
 
-<img src="/Screenshot 2026-10-29 at 3.14.40 PM.png">
+![alt text](image.png)
 
 A small survival game I made in Godot where you have to survive waves of arrows flying towards you.
 
